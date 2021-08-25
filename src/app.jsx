@@ -1,4 +1,4 @@
-import "./app.css";
+import "./App.css";
 import React, { useState, useRef, useCallback } from 'react';
 import Add from './components/add/add';
 import Header from './components/header/header';
@@ -7,46 +7,44 @@ import List from './components/list/list';
 function App() {
   
   const [todos, setTodos] = useState(
+    [ {
+      id : '1',
+      text : '리액트 공부하기',
+      checked: true,
+      star: false,
+    },
     {
-      '1': {
-        id : '1',
-        text : '리액트 공부하기',
-        checked: true,
-        star: false,
-      },
-      '2': {
-        id : '2',
-        text : '글쓰기',
-        checked: true,
-        star: false,
-      },
-      '3': {
-        id : '3',
-        text : '운동하기',
-        checked: true,
-        star: false,
-      },
-    }
+      id : '2',
+      text : '글쓰기',
+      checked: true,
+      star: false,
+    },
+    {
+      id : '3',
+      text : '운동하기',
+      checked: true,
+      star: false,
+    },]
   )
 
-  const textDelete = e => {
-    setTodos(Object.keys(todos).filter(key=>todos[key].id !== e.target.id))
+  const textDelete = (id) => {
+    setTodos(todos.filter( todo => todo.id !== id))
   }
+  // setTodos(Object.keys(todos).filter(key=>todos[key].id !== e.target.id)) Object object로 state를 작성했을 때 왜 삭제안되는지, 실력 쌓이면 꼭 확인하기
+
+
   
-  
-  // useCallback(
-  //   id => {
-  //     setTodos(Object.keys(todos).filter( key => todos[key].id !== id)); // 클릭되지 않은 나머지만 추출하여 새로운 배열 생성
-  //   },
-  //   [todos]
-  // );
- 
+  const textAdd = ( todo ) => {
+    const updated = [...todos, todo];
+    setTodos(updated)
+  }
+
 
   return (
     <div className="App">
       <div className="container">
         <Header />
-        <Add />
+        <Add textAdd={textAdd}/>
         <List todos={todos} textDelete={textDelete} />
       </div>
     </div>

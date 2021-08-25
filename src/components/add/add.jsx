@@ -1,13 +1,27 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import styles from './add.module.css'
 
-const Add = () => {
+const Add = ({textAdd}) => {
   const [value, setValue] = useState('');
+  const addRef = useRef();
+  const formRef =useRef();
+
+  const onClick = event => {
+    event.preventDefault();
+    const todo = {
+      id: Date.now(),
+      text: addRef.current.value,
+      checked: true,
+      start: false,
+    }
+    textAdd(todo)
+    formRef.current.reset();
+  }
 
   return (
-    <form>
-      <input type="text" placeholder="추가 할 일을 입력 하세요" />
-      <button type="submit">+
+    <form ref={formRef}>
+      <input ref={addRef} type="text" placeholder="추가 할 일을 입력 하세요" />
+      <button type="submit" onClick={onClick} >+
       </button>
     </form>
   )

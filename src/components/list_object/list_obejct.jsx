@@ -1,19 +1,18 @@
 import React from 'react'
+import styles from './list_object.module.css'
 
-const List_obejct = ({todo, textDelete}) => {
+
+const List_object = ({todo, textDelete}) => {
 
   const {id, text, ckecked, star} = todo;
 
-  const clicked = e => {
-    console.log(e.target.id)
-  }
 
   return (
     <div>
-      <p onClick={clicked} id={id}>{text}</p>
-      <button id={id} onClick={textDelete}>-</button>
+      <p onClick={textDelete} >{text}</p>
+      <button onClick={()=>textDelete(id)}>-</button>
     </div>
   )
 }
 
-export default List_obejct
+export default List_object
