@@ -39,13 +39,19 @@ function App() {
     setTodos(updated)
   }
 
+  const onCheck = (checked) => {
+    
+  }
+  
+
+
 
   return (
     <div className="App">
       <div className="container">
         <Header />
         <Add textAdd={textAdd}/>
-        <List todos={todos} textDelete={textDelete} />
+        <List todos={todos} textDelete={textDelete} onCheck={onCheck} />
       </div>
     </div>
   );

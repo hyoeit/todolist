@@ -1,5 +1,6 @@
 import React, {useState, useRef} from 'react'
 import styles from './add.module.css'
+import { IoIosAddCircleOutline } from "react-icons/io";
 
 const Add = ({textAdd}) => {
   const [value, setValue] = useState('');
@@ -21,7 +22,7 @@ const Add = ({textAdd}) => {
   return (
     <form ref={formRef}>
       <input ref={addRef} type="text" placeholder="추가 할 일을 입력 하세요" />
-      <button type="submit" onClick={onClick} >+
+      <button type="submit" onClick={onClick} ><IoIosAddCircleOutline />
       </button>
     </form>
   )

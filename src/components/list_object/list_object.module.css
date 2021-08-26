@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.text {
+  flex: 4;
+}
+
+.star,
+.check,
+.plus {
+  display: inline-block;
+  flex: 0.4;
+  background: none;
+  border: none;
+  text-align: center;
+  font-size: 1.5em;
+  height: 3em;
+  line-height: 3em;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+}
