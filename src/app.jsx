@@ -39,19 +39,20 @@ function App() {
     setTodos(updated)
   }
 
-  const onCheck = (checked) => {
-    
+  const onCheck = (id) => {
+    setTodos(todos.map(todo => todo.id === id? {...todo, checked: !todo.checked} : todo))
   }
-  
 
-
+  const onStar = (id) => {
+    setTodos(todos.map(todo => todo.id === id? {...todo, star: !todo.star} : todo))
+  }
 
   return (
     <div className="App">
       <div className="container">
         <Header />
         <Add textAdd={textAdd}/>
-        <List todos={todos} textDelete={textDelete} onCheck={onCheck} />
+        <List todos={todos} textDelete={textDelete} onCheck={onCheck} onStar={onStar} />
       </div>
     </div>
   );

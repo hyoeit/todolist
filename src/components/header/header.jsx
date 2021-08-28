@@ -14,10 +14,10 @@ const Header = () => {
 
   return (
   <section className={styles.container}> 
-    <section>
-      <p>{year}</p>
-      <p>{day}</p>
-      <p>{monthName}</p>
+    <section className={styles.date}>
+      <p className={styles.year}> {year}</p>
+      <p className={styles.day}>{day}</p>
+      <p className={styles.month}>{monthName}</p>
     </section>
     <div>
       <h1>To do list</h1>

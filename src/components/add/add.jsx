@@ -13,16 +13,16 @@ const Add = ({textAdd}) => {
       id: Date.now(),
       text: addRef.current.value,
       checked: true,
-      start: false,
+      star: false,
     }
     textAdd(todo)
     formRef.current.reset();
   }
 
   return (
-    <form ref={formRef}>
-      <input ref={addRef} type="text" placeholder="추가 할 일을 입력 하세요" />
-      <button type="submit" onClick={onClick} ><IoIosAddCircleOutline />
+    <form className={styles.container} ref={formRef}>
+      <input className={styles.text} ref={addRef} type="text" placeholder="추가 할 일을 입력 하세요" />
+      <button className={styles.btn} type="submit" onClick={onClick} ><IoIosAddCircleOutline />
       </button>
     </form>
   )

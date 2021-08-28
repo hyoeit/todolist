@@ -1,27 +1,26 @@
 import React from 'react'
 import styles from './list_object.module.css'
-import { IoIosCloseCircleOutline, IoIosStarOutline, IoIosCheckboxOutline  } from "react-icons/io";
+import { IoIosCloseCircleOutline, IoIosStarOutline, IoIosStar  } from "react-icons/io";
 import {
   MdCheckBoxOutlineBlank,
   MdCheckBox,
 } from "react-icons/md";
 
 
-const List_object = ({todo, textDelete, onCheck}) => {
+const List_object = ({todo, textDelete, onCheck, onStar}) => {
 
   const {id, text, checked, star} = todo;
 
-  const onClick = e => {
-    console.log(e.target.checked)
-  }
 
   return (
-    <div className={styles.list}>
-      <button className={styles.check} >
-        {checked === true ? <MdCheckBoxOutlineBlank /> : <MdCheckBox /> } 
+    <div className={styles.list} >
+      <button className={styles.check} onClick={()=>onCheck(id)} >
+        {checked === true ? <MdCheckBoxOutlineBlank /> : <MdCheckBox className={styles.checked} /> } 
       </button>
-      <p className={styles.text} onClick={textDelete} >{text}</p>
-      <button className={styles.star} ><IoIosStarOutline /></button>
+      <p className={styles.text} >{text}</p>
+      <button className={styles.star} onClick={()=>onStar(id)} >
+        {star === false ? <IoIosStarOutline /> : <IoIosStar />}
+      </button>
       <button className={styles.plus} onClick={()=>textDelete(id)}><IoIosCloseCircleOutline /></button>
     </div>
   )

@@ -1,0 +1,23 @@
+.contaienr {
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  width: 92%;
+  height: 3rem;
+  border-style: none;
+}
+
+.btn {
+  width: 8%;
+  height: 3rem;
+  border-style: none;
+  transition: transform 100 ease-in;
+  padding: 0;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}

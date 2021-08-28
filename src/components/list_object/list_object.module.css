@@ -2,11 +2,12 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 1em;
+  height: 40px;
 }
 
 .text {
   flex: 4;
+  position: relative;
 }
 
 .star,
@@ -25,4 +26,14 @@
 .check {
   display: flex;
   align-items: center;
+}
+
+.checked::after {
+  position: absolute;
+  content: "";
+  width: 42px;
+  height: 1px;
+  background: #171611;
+  left: 5px;
+  bottom: -3px;
 }
