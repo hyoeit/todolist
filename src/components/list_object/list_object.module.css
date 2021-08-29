@@ -3,6 +3,7 @@
   justify-content: space-evenly;
   align-items: center;
   height: 40px;
+  border-bottom: 1px solid grey;
 }
 
 .text {
@@ -18,7 +19,7 @@
   background: none;
   border: none;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.1em;
   height: 3em;
   line-height: 3em;
 }
@@ -26,14 +27,4 @@
 .check {
   display: flex;
   align-items: center;
-}
-
-.checked::after {
-  position: absolute;
-  content: "";
-  width: 42px;
-  height: 1px;
-  background: #171611;
-  left: 5px;
-  bottom: -3px;
 }

@@ -20,7 +20,7 @@ const Header = () => {
       <p className={styles.month}>{monthName}</p>
     </section>
     <div>
-      <h1>To do list</h1>
+      <h1>Better than yesterday</h1>
     </div>
   </section>  
   )

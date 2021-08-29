@@ -19,7 +19,7 @@ const List_object = ({todo, textDelete, onCheck, onStar}) => {
       </button>
       <p className={styles.text} >{text}</p>
       <button className={styles.star} onClick={()=>onStar(id)} >
-        {star === false ? <IoIosStarOutline /> : <IoIosStar />}
+        {star === false ? <IoIosStarOutline /> : <IoIosStar className={styles.stared} />}
       </button>
       <button className={styles.plus} onClick={()=>textDelete(id)}><IoIosCloseCircleOutline /></button>
     </div>

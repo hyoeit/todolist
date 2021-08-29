@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react'
 import styles from './add.module.css'
-import { IoIosAddCircleOutline } from "react-icons/io";
+import { IoIosMusicalNotes } from "react-icons/io";
 
 const Add = ({textAdd}) => {
   const [value, setValue] = useState('');
@@ -21,8 +21,8 @@ const Add = ({textAdd}) => {
 
   return (
     <form className={styles.container} ref={formRef}>
-      <input className={styles.text} ref={addRef} type="text" placeholder="추가 할 일을 입력 하세요" />
-      <button className={styles.btn} type="submit" onClick={onClick} ><IoIosAddCircleOutline />
+      <input className={styles.text} ref={addRef} type="text" placeholder="Write! What you shoud do." />
+      <button className={styles.btn} type="submit" onClick={onClick} ><IoIosMusicalNotes />
       </button>
     </form>
   )
