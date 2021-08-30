@@ -1,10 +1,11 @@
-import "./App.css";
+import "./app.css";
 import React, { useState, useRef, useCallback } from 'react';
 import Add from './components/add/add';
 import Header from './components/header/header';
 import List from './components/list/list';
+import Login from './components/login/login';
 
-function App() {
+function App({authService}) {
   
   const [todos, setTodos] = useState(
     [ {
@@ -49,11 +50,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
+        <Login authService={authService} />
+      {/* <div className="container">      
         <Header />
         <Add textAdd={textAdd}/>
-        <List todos={todos} textDelete={textDelete} onCheck={onCheck} onStar={onStar} />
-      </div>
+        <List todos={todos} textDelete={textDelete} onCheck={onCheck} onStar={onStar} /> 
+      </div> */}
     </div>
   );
 }
