@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useHistory } from 'react-router-dom'
 import styles from './login.module.css'
 
@@ -18,6 +18,14 @@ const Login = ({ authService }) => {
       .login(event.currentTarget.textContent)
       .then(data => goToNote(data.user.uid));
   }
+
+  useEffect(() => {
+    authService.onAuthChange(user => {
+      user && goToNote(user.uid);
+    })
+  })
+
+
   return (
     <section className={styles.container}>
       <section className={styles.header}>

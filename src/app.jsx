@@ -1,5 +1,5 @@
 import "./app.css";
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState } from 'react';
 import Add from './components/add/add';
 import Header from './components/header/header';
 import List from './components/list/list';
@@ -9,24 +9,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App({authService}) {
   
   const [todos, setTodos] = useState(
-    [ {
-      id : '1',
-      text : '리액트 공부하기',
-      checked: true,
-      star: false,
-    },
-    {
-      id : '2',
-      text : '글쓰기',
-      checked: true,
-      star: false,
-    },
-    {
-      id : '3',
-      text : '운동하기',
-      checked: true,
-      star: false,
-    },]
+    []
   )
 
   const textDelete = (id) => {
@@ -58,12 +41,11 @@ function App({authService}) {
         </Route>
         <Route path="/note">
           <div className="container">      
-          <Header />
+          <Header authService={authService}/>
           <Add textAdd={textAdd}/>
           <List todos={todos} textDelete={textDelete} onCheck={onCheck} onStar={onStar} /> 
           </div>
         </Route>
-
       </Switch>
       </BrowserRouter>
     </div>

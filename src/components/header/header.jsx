@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useHistory } from 'react-router-dom';
 import styles from './header.module.css'
 
-const Header = () => {
+const Header = ({authService}) => {
   
   const date = new Date();
   const year = date.getFullYear();
@@ -9,8 +10,20 @@ const Header = () => {
   const month = date.getMonth();
   const monthNames = ["JAN", "FAB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
   const monthName = monthNames[month]
-  console.log(month)
- 
+
+  const onLogout = () => {
+    authService.logout();
+  }
+
+  const history = useHistory();
+
+  useEffect(() => {
+    authService.onAuthChange(user => {
+      if (!user) {
+        history.push('/')
+      }
+    })
+  })
 
   return (
   <section className={styles.container}> 
@@ -22,6 +35,7 @@ const Header = () => {
     <div>
       <h1>Better than yesterday</h1>
     </div>
+    <button onClick={onLogout}>logout</button>
   </section>  
   )
 }
