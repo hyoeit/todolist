@@ -36,7 +36,7 @@ function App({authService}) {
     <div className="App">
       <BrowserRouter>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/todolist">
           <Login authService={authService} />
         </Route>
         <Route path="/note">

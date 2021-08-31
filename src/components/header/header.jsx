@@ -35,7 +35,7 @@ const Header = ({authService}) => {
     <div>
       <h1>Better than yesterday</h1>
     </div>
-    <button onClick={onLogout}>logout</button>
+    <button className={styles.logout} onClick={onLogout}>logout</button>
   </section>  
   )
 }
