@@ -4,6 +4,7 @@ import Add from './components/add/add';
 import Header from './components/header/header';
 import List from './components/list/list';
 import Login from './components/login/login';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App({authService}) {
   
@@ -50,12 +51,21 @@ function App({authService}) {
 
   return (
     <div className="App">
-        <Login authService={authService} />
-      {/* <div className="container">      
-        <Header />
-        <Add textAdd={textAdd}/>
-        <List todos={todos} textDelete={textDelete} onCheck={onCheck} onStar={onStar} /> 
-      </div> */}
+      <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Login authService={authService} />
+        </Route>
+        <Route path="/note">
+          <div className="container">      
+          <Header />
+          <Add textAdd={textAdd}/>
+          <List todos={todos} textDelete={textDelete} onCheck={onCheck} onStar={onStar} /> 
+          </div>
+        </Route>
+
+      </Switch>
+      </BrowserRouter>
     </div>
   );
 }

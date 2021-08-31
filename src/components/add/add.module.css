@@ -16,7 +16,8 @@
   height: 3rem;
   border-style: none;
   transition: transform 100 ease-in;
-  padding: 0;
+  padding-bottom: 3px;
+  background-color: rgb(234, 234, 234);
 }
 
 .btn:hover {
