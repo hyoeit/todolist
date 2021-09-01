@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://hyoeit.github.io/todolist/static/css/main.68c88101.chunk.css",
-    "main.js": "https://hyoeit.github.io/todolist/static/js/main.b265c9a0.chunk.js",
-    "main.js.map": "https://hyoeit.github.io/todolist/static/js/main.b265c9a0.chunk.js.map",
+    "main.js": "https://hyoeit.github.io/todolist/static/js/main.ea4edc46.chunk.js",
+    "main.js.map": "https://hyoeit.github.io/todolist/static/js/main.ea4edc46.chunk.js.map",
     "runtime-main.js": "https://hyoeit.github.io/todolist/static/js/runtime-main.137190aa.js",
     "runtime-main.js.map": "https://hyoeit.github.io/todolist/static/js/runtime-main.137190aa.js.map",
     "static/js/2.20dbef73.chunk.js": "https://hyoeit.github.io/todolist/static/js/2.20dbef73.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.137190aa.js",
     "static/js/2.20dbef73.chunk.js",
     "static/css/main.68c88101.chunk.css",
-    "static/js/main.b265c9a0.chunk.js"
+    "static/js/main.ea4edc46.chunk.js"
   ]
 }
