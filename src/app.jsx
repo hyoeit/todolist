@@ -4,7 +4,7 @@ import Add from './components/add/add';
 import Header from './components/header/header';
 import List from './components/list/list';
 import Login from './components/login/login';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 function App({authService}) {
   
@@ -34,7 +34,7 @@ function App({authService}) {
 
   return (
     <div className="App">
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter >
       <Switch>
         <Route exact path="/">
           <Login authService={authService} />
@@ -47,7 +47,7 @@ function App({authService}) {
           </div>
         </Route>
       </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
