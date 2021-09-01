@@ -34,9 +34,9 @@ function App({authService}) {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route basenae={process.env.PUBLIC_URL}>
+        <Route basenae="/todolist">
           <Login authService={authService} />
         </Route>
         <Route path="/note">
