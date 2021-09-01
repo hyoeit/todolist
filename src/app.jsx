@@ -36,7 +36,7 @@ function App({authService}) {
     <div className="App">
       <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route basenae="/todolist">
+        <Route exact path="/">
           <Login authService={authService} />
         </Route>
         <Route path="/note">
